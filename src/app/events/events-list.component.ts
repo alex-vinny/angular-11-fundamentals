@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from '../common/toastr.service';
-import { EventService } from './shared/event.services';
+import { EventService } from './shared/event.service';
 
 @Component({
   templateUrl: './events-list.component.html',
