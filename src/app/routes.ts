@@ -6,7 +6,7 @@ import { EventRouterActivator } from "./events/event-details/event-router-activa
 import { EventsListComponent } from "./events/events-list.component";
 
 export const appRoutes :Routes = [
-    { path: 'events/new', component: CreateEventComponent },
+    { path: 'events/new', component: CreateEventComponent, canDeactivate: ['canDeactivateCreateEvent'] },
     { path: 'events', component: EventsListComponent },
     { path: 'events/:id', component: EventDetailsComponent, canActivate: [EventRouterActivator] },
     { path: '404', component: Error404Component },

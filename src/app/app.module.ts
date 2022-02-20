@@ -29,7 +29,21 @@ import { EventRouterActivator } from './events/event-details/event-router-activa
     NavBarComponent,
     CreateEventComponent
   ],
-  providers: [EventService, ToastrService, EventRouterActivator],
+  providers: [
+    EventService,
+    ToastrService,
+    EventRouterActivator,
+    { 
+      provide: 'canDeactivateCreateEvent', 
+      useValue: checkDirtyState
+    }
+  ],
   bootstrap: [EventsAppComponent]
 })
 export class AppModule { }
+
+export function checkDirtyState(component:CreateEventComponent) {
+  if (component.isDirty)
+    return window.confirm('You have not saved this event, do you really want to cancel?')
+  return true;
+}
