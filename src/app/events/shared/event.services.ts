@@ -4,7 +4,11 @@ import { Injectable } from "@angular/core"
 export class EventService {
     getEvents() : any {
         return EVENTS
-    }   
+    }
+
+    getEvent(id:number) : any {
+      return EVENTS.find(e => e.id === id)
+    }
 }
 
 const EVENTS = [
