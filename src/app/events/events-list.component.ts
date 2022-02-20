@@ -313,5 +313,5 @@ export class EventsListComponent {
         }
       ]
     }
-  ];
+  ];  
 }
