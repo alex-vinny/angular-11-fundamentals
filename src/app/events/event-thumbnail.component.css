@@ -13,3 +13,7 @@
 .green {
     color: #003300 !important;
 }
+
+.bold {
+    font-weight: bold;
+}
