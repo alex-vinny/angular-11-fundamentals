@@ -3,7 +3,7 @@
     <div>Date: {{event.date}}</div>
     <div [ngSwitch]="event.time">
         Time: {{event.time}}
-        <span class="label label-primary" *ngSwitchCase="'8:00 am'">(Early Start)</span>
+        <span class="label label-info" *ngSwitchCase="'8:00 am'">(Early Start)</span>
         <span class="label label-warning" *ngSwitchCase="'10:00 am'">(Late Start)</span>
         <span class="label label-success" *ngSwitchDefault>(Normal Start)</span>
     </div>    
