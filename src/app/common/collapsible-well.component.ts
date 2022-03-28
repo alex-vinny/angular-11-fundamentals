@@ -1,14 +1,15 @@
-import { Component, Input } from "@angular/core";
+import { Component, EventEmitter, Output } from "@angular/core";
 
 @Component({
     selector: 'collapsible-well',
     templateUrl: './collapsible-well.component.html'
 })
 export class CollapsibleWellComponent {
-    @Input() title: string | undefined
-    visible: boolean = true
+    visible: boolean = false
+    @Output() expandedWell: EventEmitter<boolean> = new EventEmitter()
 
     toggleContent() {
         this.visible = !this.visible;
+        this.expandedWell.emit(this.visible)
     }
 }

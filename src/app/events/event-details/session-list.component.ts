@@ -8,4 +8,9 @@ import { ISession } from "../shared";
 })
 export class SessionListComponent {
     @Input() sessions: ISession[] | undefined
+    showIcon: boolean = true
+
+    changeIconVisibility(event:boolean) {
+        this.showIcon = event
+    }
 }
