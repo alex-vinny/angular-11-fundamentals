@@ -13,7 +13,7 @@ export class NavBarComponent {
     searchTerm: string = ""
     foundSession: ISession[] = []
 
-    constructor(private auth: AuthService, private eventService: EventService) {        
+    constructor(private auth: AuthService, private eventService: EventService) {
     }
 
     isAuthenticated() : boolean {
@@ -24,13 +24,10 @@ export class NavBarComponent {
         return this.auth.currentUser?.firstName;
     }
 
-    searchSessions(searchTerm: string) : ISession[] {
+    searchSessions(searchTerm: string) {
         this.eventService.searchSessions(searchTerm)
             .subscribe(sessions => {
                 this.foundSession = sessions
             })
-        console.log(this.foundSession)
-        
-        return this.foundSession
     }
 }
